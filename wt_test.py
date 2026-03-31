@@ -999,7 +999,7 @@ elif view_mode == "水温グラフ":
                 .apply(lambda g: (
                     g.drop(columns=["depth_m"], errors="ignore")
                      .set_index("datetime")
-                     .resample("1H")
+                     .resample("1h")
                      .median(numeric_only=True)
                      .interpolate(method="time", limit=2)
                      .reset_index()
@@ -1035,7 +1035,7 @@ elif view_mode == "水温グラフ":
                 .apply(lambda g: (
                     g.drop(columns=["depth_m"])
                     .set_index("datetime")[use_cols]
-                    .resample("1H").median().dropna(how="all").reset_index()
+                    .resample("1h").median().dropna(how="all").reset_index()
                     .assign(depth_m=int(g["depth_m"].iloc[0]))
                 ))
             )
