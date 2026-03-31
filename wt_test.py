@@ -997,7 +997,7 @@ elif view_mode == "水温グラフ":
             df_period.sort_values("datetime")
             .groupby("depth_m", group_keys=False)
             .apply(lambda g: (
-                g.drop(columns=["depth_m"]).set_index("datetime")
+                g.drop(columns=["depth_m"], errors="ignore").set_index("datetime")
                 .resample("1H").median(numeric_only=True).interpolate(method="time", limit=2).reset_index()
                 .assign(depth_m=int(g["depth_m"].iloc[0]))
             ))
