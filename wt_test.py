@@ -1033,10 +1033,10 @@ elif view_mode == "水温グラフ":
                 df_corr_period.sort_values("datetime")
                 .groupby("depth_m", group_keys=False)
                 .apply(lambda g: (
-                    g.drop(columns=["depth_m"])
+                    g.drop(columns=["depth_m"], errors="ignore")
                     .set_index("datetime")[use_cols]
                     .resample("1h").median().dropna(how="all").reset_index()
-                    .assign(depth_m=int(g["depth_m"].iloc[0]))
+                    .assign(depth_m=int(g.name))
                 ))
             )
 
