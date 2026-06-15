@@ -811,7 +811,7 @@ if (!window.parent.document.getElementById(id)) {
   div.style.position = "fixed";
   div.style.top = "6px";
   div.style.left = "10px";
-  div.style.fontSize = "10px";
+  div.style.fontSize = "15px";
   div.style.color = "rgba(120,120,120,0.8)";
   div.style.zIndex = "999999";
   div.style.pointerEvents = "none";
