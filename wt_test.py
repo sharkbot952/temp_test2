@@ -805,13 +805,14 @@ st.markdown("""
 <style>
 .stApp::after {
     content: "※試験・非商用";
-    position: fixed;
-    right: 8px;
-    bottom: 4px;
-    font-size: 10px;
-    color: rgba(120, 120, 120, 0.70);
-    z-index: 9999;
-    pointer-events: none;
+    position: fixed !important;
+    right: 8px !important;
+    bottom: 4px !important;
+    font-size: 10px !important;
+    color: rgba(120, 120, 120, 0.85) !important;
+    z-index: 999999 !important;
+    pointer-events: none !important;
+    display: block !important;
 }
 </style>
 """, unsafe_allow_html=True)
