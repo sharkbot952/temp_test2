@@ -802,18 +802,17 @@ def summarize_daily_layer_flow(
 inject_compact_css()
 
 st.markdown("""
-<style>
-.stApp::after {
-    content: "※試験・非商用";
-    position: fixed;
-    left: 8px;
-    top: 4px;
-    font-size: 15px;
-    color: rgba(120, 120, 120, 0.7);
-    z-index: 9999;
-    pointer-events: none;
-}
-</style>
+<div style="
+position: fixed;
+left: 8px;
+top: 6px;
+font-size: 10px;
+color: rgba(120,120,120,0.7);
+z-index: 99999;
+pointer-events: none;
+">
+※試験・非商用
+</div>
 """, unsafe_allow_html=True)
 
 try:
