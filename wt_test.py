@@ -847,7 +847,7 @@ if view_mode != "CMEM":
         st.warning("pred に CSV がありません")
         st.stop()
 
-    default_file = "14_ota.csv"
+    default_file = "12_mas.csv"
     selected_file = st.selectbox("", sorted(pred_files), index=(sorted(pred_files).index(default_file) if default_file in sorted(pred_files) else 0), key="sel_pred_file", label_visibility="collapsed")
 
     pred_path = pjoin(BASE_DIR, PRED_DIR, selected_file)
